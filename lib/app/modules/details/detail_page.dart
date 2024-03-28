@@ -76,32 +76,48 @@ class DetailPage extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Origin: ',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    characterDetail.origin!,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-                  ),
-                ],
+              child: SizedBox(
+                width: size.width,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Origin: ',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      width: size.width * .5,
+                      child: Text(
+                        textAlign: TextAlign.end,
+                        characterDetail.origin!,
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(16.0),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Location: ',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Location: ',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
                   ),
-                  Text(
-                    characterDetail.location!,
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                      textAlign: TextAlign.end,
+                      characterDetail.location!,
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ],
               ),
